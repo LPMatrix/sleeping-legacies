@@ -10,6 +10,7 @@ html{
 	padding-left: 5.3rem;
 	padding-right: 8rem;
 	justify-content: flex-end;
+	border-bottom: 1px solid #000;
 
 	&:first-child{
 		justify-content: flex-start;
@@ -19,38 +20,55 @@ html{
 		height: 10rem;
 		width: 12.7rem;
 	}
-	&__list{
-		list-style-type: none;
-		text-transform: uppercase;
+	&__search{
 		display: flex;
 		line-height: 2.56rem;
 	  	align-items: center;
 	  	margin-left: auto;
 	}
-	&__list li a{
-		text-decoration: none;
-		color: $color-primary;
-		font-size: 1.4rem;
-		margin-left: 3.3rem;
-		line-height: 2.56rem;
-	}
 }
 
+.form-control{
+	height: 5.6rem;
+	width: 37.7rem;
+	border: 1px solid #000;
+}
 
 .gallery{
+	margin: 2rem 0;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	padding: 0 9.1rem;
 	gap: 1.2rem;
 
-	&__image{
-		width: 100%;
+	&__card{
+		padding: 1rem;
 		height: 30rem;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.8);
 
+		h4{
+			font-size: 2.5rem;
+		}
+		h5{
+			font-size: 2rem;
+		}
+		p{
+			line-height: 2rem;
+		}
 	}
-	img{
-		display: inline-block;
-		height: 100%;
-		width: 100%;
-	}
+}
+
+.footer{
+	display: flex;
+	justify-content: center;
+}
+
+.btn{
+	color: $text-white;
+	padding: 1rem 7rem;
+	font-size: 1rem;
+	border: none;
+	background-color: $bg-dark;
+	cursor: pointer;
+
 }
