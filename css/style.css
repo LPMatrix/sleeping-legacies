@@ -427,4 +427,5 @@ html {
   font-size: 1rem;
   border: none;
   background-color: #1B2021;
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 2rem; }
