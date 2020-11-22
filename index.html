@@ -8,61 +8,54 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script type="text/javascript" src="deathnote.json"></script>
 </head>
-<body>
+<body x-data="loadData()">
 	<nav class="nav">
 		<img src="img/logo.svg" class="nav__logo">
 		<div class="nav__search">
-			<input class="form-control" type="text" name="search" placeholder="Search">
+			<input 
+			x-ref="searchField"
+			x-model="search"
+        	x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
+			class="form-control" 
+			type="search"  
+			placeholder="Search..." >
 		</div>
 	</nav>
 
 	<section class="row">
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
-		<div class="col-4 card">
-			<h4>iroking</h4>
-			<p>Ryuk (Japanese: リューク, Hepburn: Ryūku) is a fictional character in the manga series Death ... Kaneko said that because Ryuk's physical structure is "different from a human's," he thought of an idea of visualizing a person in a Ryuk costume.</p>
-			<h5>2011 - 2014</h5>
-		</div>
+		<template x-for="item in filteredData" :key="item">
+			<div class="col-4 card">
+				<h4 x-text="item['name']"></h4>
+		    	<p x-text="item['description']"></p>
+		    	<h5 x-text="item['dateOpen'] +' - '+ item['dateClose']"></h5>
+		    </div>
+		</template>
 	</section>
 
-	<div class="footer">
-		<button class="btn">LOAD MORE</button>
+	<div x-data="{ count: items.length }" class="footer">
+		<button x-show = "count > 8" class="btn">LOAD MORE</button>
 	</div>
 
+<script type="text/javascript">
+	function loadData() {
+        return {
+          search: "",
+          myForData: items,
+          get filteredData() {
+            if (this.search === "") {
+              return this.myForData;
+            }
+            return this.myForData.filter((item) => {
+              return item.name
+                .toLowerCase()
+                .includes(this.search.toLowerCase());
+            });
+          },
+        };
+      }
+</script>
 </body>
 </html>
