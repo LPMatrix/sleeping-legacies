@@ -25,10 +25,14 @@
 		</div>
 	</nav>
 
+	<div class="hero">
+		<p>A tribute and log of beloved products and services that failed in Nigeria.</p>
+	</div>
+
 	<section class="row">
 		<template x-for="item in filteredData" :key="item">
 			<div class="col-4 card">
-				<h4 x-text="item['name']"></h4>
+				<h5 x-text="item['name']"></h5>
 		    	<p x-text="item['description']"></p>
 		    	<h5 x-text="item['dateOpen'] +' - '+ item['dateClose']"></h5>
 		    </div>
