@@ -96,6 +96,7 @@ body{
 
 }
 
+/*Mobile screen responsivenes*/
 @media (max-width: 600px) {
   .row {
     display: block;
@@ -120,6 +121,7 @@ body{
   
 }
 
+/*Tablet screens responsiveness*/
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
