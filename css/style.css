@@ -391,7 +391,8 @@ body {
     justify-content: flex-start; }
   .nav__logo {
     height: 10rem;
-    width: 12.7rem; }
+    width: 12.7rem;
+    filter: invert(1); }
   .nav__search {
     display: flex;
     line-height: 2.56rem;
