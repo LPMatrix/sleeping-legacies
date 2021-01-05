@@ -89,5 +89,53 @@ var items = [
     "description": "ChopUP is focused on the development of mobile games that are designed with African themes.",
     "name": "ChopUP",
   },
+  {
+    "dateOpen": "2008",
+    "dateClose": "2018",
+    "description": "Gamsole is an African based mobile game production company. Our goal is to make games that are fun to play; plain and simple. Each game offers a widely imaginative and irresistibly fun gameplay experience that appeals to gamers of all age groups.",
+    "name": "Gamsole",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2016",
+    "description": "Kaymu is Nigeria’s leading online marketplace, similar to eBay. The platform enables buyers have access to a wide variety of products at the most competitive price while giving sellers a platform to reach a large audience base.",
+    "name": "Kaymu",
+  },
+  {
+    "dateOpen": "2011",
+    "dateClose": "2016",
+    "description": "Giddimint is an online fashion store which aims to celebrate African art and culture through urban fashion items and accessories. They bring the best urban Africa has to offer to your doorstep.",
+    "name": "Giddimint",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2018",
+    "description": "Bus.com.ng is an online bus ticket booking platform. Claims to offer bus tickets across over 30 states. Also, it claims to helps the bus operators in collecting payments, inventory management, data analytics, and aggregation systems. It allows users to book charter buses.",
+    "name": "Bus.com.ng",
+  },
+  {
+    "dateOpen": "2014",
+    "dateClose": "2016",
+    "description": "Autosave is Lagos Nigeria's leading Towing and quick mechanic fix specialists anytime and anywhere in Lagos.",
+    "name": "Autosave",
+  },
+  {
+    "dateOpen": "2014",
+    "dateClose": "2016",
+    "description": "Insured.ng is a free, impartial online comparison service that helps you to compare prices on a range of insurance products and services.",
+    "name": "Insured.ng",
+  },
+  {
+    "dateOpen": "2011",
+    "dateClose": "2014",
+    "description": "IROKING is a free Nigerian music streaming service offering streaming of selected music from a range of African labels and artists.",
+    "name": "IROKING",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2015",
+    "description": "http://Christians.com.ng is the online community created specifically for Christian singles looking to find friends or marriage.",
+    "name": "Christians.ng",
+  },
   
 ]
