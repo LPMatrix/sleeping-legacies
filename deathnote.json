@@ -53,5 +53,41 @@ var items = [
     "description": "CakeTunes was an online marketplace where music producers can sell beats to musicians and video firms.",
     "name": "CakeTunes",
   },
+  {
+    "dateOpen": "2014",
+    "dateClose": "2017",
+    "description": "Sanwo is a contactless payment solution and platform, aimed at solving the problem of payment and balance.",
+    "name": "Sanwo",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2018",
+    "description": "Simplepay help Nigerians receive payments online the simple way. SimplePay allows any business or consumer with an e-mail address and a bank account to securely, conveniently and cost-effectively receive Verve, MasterCard and Visa card payments online.",
+    "name": "Simplepay",
+  },
+  {
+    "dateOpen": "2019",
+    "dateClose": "2020",
+    "description": "ORide is a bike taxi/ hailing service for a safe, affordable and fast way to navigate the cities of Nigeria in minutes.",
+    "name": "ORide",
+  },
+  {
+    "dateOpen": "2016",
+    "dateClose": "2019",
+    "description": "myPadi is a housing marketplace that connects college students mostly faced with the faced dearth of on-campus housing with vetted rooms from landlords for the purpose of making renting and house hunting easier.",
+    "name": "myPadi",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2015",
+    "description": "Autobox.ng is Nigeria's #1 Marketplace for Automobile Parts and accessories, with mechanic booking platform.",
+    "name": "Autobox",
+  },
+  {
+    "dateOpen": "2013",
+    "dateClose": "2018",
+    "description": "ChopUP is focused on the development of mobile games that are designed with African themes.",
+    "name": "ChopUP",
+  },
   
 ]
