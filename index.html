@@ -39,9 +39,9 @@
 		</template>
 	</section>
 
-	<div x-data="{ count: items.length }" class="footer">
+<!-- 	<div x-data="{ count: items.length }" class="footer">
 		<button x-show = "count > 8" class="btn">LOAD MORE</button>
-	</div>
+	</div> -->
 
 <script type="text/javascript">
 	function loadData() {
@@ -50,7 +50,7 @@
           myForData: items,
           get filteredData() {
             if (this.search === "") {
-              return this.myForData;
+              return this.myForData.sort(compare);
             }
             return this.myForData.filter((item) => {
               return item.name
@@ -60,6 +60,17 @@
           },
         };
       }
+
+    function compare(a, b) {
+	  if ( a.name.toLowerCase() < b.name.toLowerCase() ){
+	    return -1;
+	  }
+	  if ( a.name.toLowerCase() > b.name.toLowerCase() ){
+	    return 1;
+	  }
+	  return 0;
+	}
+
 </script>
 </body>
 </html>
