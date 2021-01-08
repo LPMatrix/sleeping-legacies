@@ -29,6 +29,17 @@
 		<p>A tribute and log of beloved products and services that failed in Nigeria.</p>
 	</div>
 
+	<div class="stepwizard">
+	    <div class="stepwizard-row">
+	    	<template x-for="alphabet in alphabets" :key="alphabet">
+		        <div class="stepwizard-step">
+		            <button type="button" class="btn btn-primary btn-circle" x-text="alphabet" @click="filter(alphabet)"></button>
+		        </div> 
+	    	</template>
+	    </div>
+	</div>
+
+
 	<section class="row">
 		<template x-for="item in filteredData" :key="item">
 			<div class="col-4 card">
@@ -46,8 +57,10 @@
 <script type="text/javascript">
 	function loadData() {
         return {
+          alphabets: ['*', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
           search: "",
           myForData: items,
+          // filteredData: "",
           get filteredData() {
             if (this.search === "") {
               return this.myForData.sort(compare);
@@ -56,6 +69,14 @@
               return item.name
                 .toLowerCase()
                 .includes(this.search.toLowerCase());
+            });
+          },
+          filter(alphabet){
+          	return this.myForData.filter((item) => {
+              return item.name
+                .toLowerCase()
+                .startsWith(alphabet.toLowerCase());
+                
             });
           },
         };
