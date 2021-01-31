@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$color-primary: #0556CD;
+/*$color-primary: #000033;*/
+
+$white: #FFF;
+
+$text-black: #000;
+
+$text-gray: #4F4F4F;
+
+$bg-dark: #0556f6;
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;

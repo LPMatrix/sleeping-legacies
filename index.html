@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Death Note</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script type="text/javascript" src="deathnote.json"></script>
+</head>
+<body x-data="loadData()">
+	<nav class="nav">
+		<img src="img/logo.svg" class="nav__logo">
+		<div class="nav__search">
+			<input 
+			x-ref="searchField"
+			x-model="search"
+        	x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
+			class="form-control" 
+			type="search"  
+			placeholder="Search..." >
+		</div>
+	</nav>
+
+	<div class="hero">
+		<p>A tribute and log of beloved products and services that failed in Nigeria.</p>
+	</div>
+
+	<div class="stepwizard">
+	    <div class="stepwizard-row">
+	    	<template x-for="alphabet in alphabets" :key="alphabet">
+		        <div class="stepwizard-step">
+		            <button type="button" class="btn btn-primary btn-circle" x-text="alphabet" @click="filter(alphabet)"></button>
+		        </div> 
+	    	</template>
+	    </div>
+	</div>
+
+
+	<section class="row">
+		<template x-for="item in filteredData" :key="item">
+			<div class="col-4 card">
+				<h5 x-text="item['name']"></h5>
+		    	<p x-text="item['description']"></p>
+		    	<h5 x-text="item['dateOpen'] +' - '+ item['dateClose']"></h5>
+		    </div>
+		</template>
+	</section>
+
+<!-- 	<div x-data="{ count: items.length }" class="footer">
+		<button x-show = "count > 8" class="btn">LOAD MORE</button>
+	</div> -->
+
+<script type="text/javascript">
+	function loadData() {
+        return {
+          alphabets: ['*', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+          search: "",
+          myForData: items,
+          // filteredData: "",
+          get filteredData() {
+            if (this.search === "") {
+              return this.myForData.sort(compare);
+            }
+            return this.myForData.filter((item) => {
+              return item.name
+                .toLowerCase()
+                .includes(this.search.toLowerCase());
+            });
+          },
+          filter(alphabet){
+          	return this.myForData.filter((item) => {
+              return item.name
+                .toLowerCase()
+                .startsWith(alphabet.toLowerCase());
+                
+            });
+          },
+        };
+      }
+
+    function compare(a, b) {
+	  if ( a.name.toLowerCase() < b.name.toLowerCase() ){
+	    return -1;
+	  }
+	  if ( a.name.toLowerCase() > b.name.toLowerCase() ){
+	    return 1;
+	  }
+	  return 0;
+	}
+
+</script>
+</body>
+</html>
