@@ -137,5 +137,11 @@ var items = [
     "description": "Christians.com.ng is the online community created specifically for Christian singles looking to find friends or marriage.",
     "name": "Christians.ng",
   },
+  {
+    "dateOpen": "2016",
+    "dateClose": "2018",
+    "description": "Lands.ng aimed to use technology to revolutionise the way Nigerians thought about real estate activities as well as provide a long-term solution to the home ownership challenges and the living standards across the country",
+    "name": "Lands.ng",
+  },
   
 ]
