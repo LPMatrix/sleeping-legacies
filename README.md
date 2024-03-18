@@ -16,6 +16,7 @@ To add a product, gather the following information:
 - Launch Year (`dateOpen`)
 - Discontinued Year (`dateClose`)
 - Description (`description`)
+- Country (`country`)
 
 If you are already familiar with `git`, follow these steps:
 
@@ -29,6 +30,7 @@ If you are already familiar with `git`, follow these steps:
     "dateOpen": "YYYY",
     "description": "[Product Name] was a single sentence overview of the product or service.",
     "name": "[Product Name]",
+    "country": "Country",
   }
 ```
 5. Finally, [create a Pull Request (PR)](https://help.github.com/en/articles/creating-a-pull-request) using the newly created branch (Important: DON'T use the `master` branch for the PR). Submit it with the necessary explanations.  
