@@ -1,7 +1,7 @@
 <div align="center">
   <img src="img/logo.svg" alt="death note" style="height: 80px; width: 80px; padding: 0 20px;">
   <h1>Death Note</h1>
-  <p>A tribute and log of beloved products and services that failed in Nigeria.</p>
+  <p>A tribute and log of beloved African products and services that failed.</p>
 </div>
 
 <div align="center">
