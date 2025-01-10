@@ -26,7 +26,7 @@
 	</nav>
 
 	<div class="hero">
-		<p>A tribute and log of beloved products and services that failed in Nigeria.</p>
+		<p>A celebration and record of innovative products and services that made an impact across <br> Africa before their journeys came to an end.</p>
 	</div>
 
 	<div class="stepwizard">
@@ -56,40 +56,29 @@
 
 <script type="text/javascript">
 	function loadData() {
-        return {
-          alphabets: ['*', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-          search: "",
-          myForData: items,
-          // filteredData: "",
-          get filteredData() {
-            if (this.search === "") {
-              return this.myForData.sort(compare);
-            }
-            return this.myForData.filter((item) => {
-              return item.name
-                .toLowerCase()
-                .includes(this.search.toLowerCase());
-            });
-          },
-          filter(alphabet){
-          	return this.myForData.filter((item) => {
-              return item.name
-                .toLowerCase()
-                .startsWith(alphabet.toLowerCase());
-                
-            });
-          },
-        };
-      }
+		return {
+			alphabets: ['*', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+			search: "",
+			myForData: items,
+			get filteredData() {
+				let data = this.myForData;
+				if (this.search !== "") {
+					data = data.filter(item => item.name.toLowerCase().startsWith(this.search.toLowerCase()));
+				}
+				return data.sort(compare);
+			},
+			filter(alphabet) {
+				if (alphabet === '*') {
+					this.search = "";
+				} else {
+					this.search = alphabet;
+				}
+			}
+		};
+	}
 
-    function compare(a, b) {
-	  if ( a.name.toLowerCase() < b.name.toLowerCase() ){
-	    return -1;
-	  }
-	  if ( a.name.toLowerCase() > b.name.toLowerCase() ){
-	    return 1;
-	  }
-	  return 0;
+	function compare(a, b) {
+		return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
 	}
 
 </script>
