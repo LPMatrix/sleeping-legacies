@@ -272,5 +272,50 @@ var items = [
     "name": "Qefira",
     "country": "Ethiopia",
   },
+  [
+  {
+    "dateClose": "2024",
+    "dateOpen": "2012",
+    "description": "iProcure was a platform modernizing Kenya's agricultural supply chain through mobile technology.",
+    "name": "iProcure",
+    "country": "Kenya"
+  },
+  {
+    "dateClose": "2024",
+    "dateOpen": "2013",
+    "description": "Copia Global was an e-commerce platform enabling rural commerce via local agents.",
+    "name": "Copia Global",
+    "country": "Kenya"
+  },
+  {
+    "dateClose": "2024",
+    "dateOpen": "2012",
+    "description": "Gro Intelligence was an agricultural data platform providing actionable insights.",
+    "name": "Gro Intelligence",
+    "country": "Kenya"
+  },
+  {
+    "dateClose": "2024",
+    "dateOpen": "2018",
+    "description": "MarketForce was a B2B marketplace known for its RejaReja platform for retail distribution.",
+    "name": "MarketForce",
+    "country": "Kenya"
+  },
+  {
+    "dateClose": "2024",
+    "dateOpen": "2021",
+    "description": "Thepeer was an API startup focused on digital wallet integrations.",
+    "name": "Thepeer",
+    "country": "Nigeria"
+  },
+  {
+    "dateClose": "2024",
+    "dateOpen": "2019",
+    "description": "MVX was a logistics and trade finance platform initially focused on vessel chartering and later pivoted to freight.",
+    "name": "MVX",
+    "country": "Nigeria"
+  }
+]
+
   
 ]
