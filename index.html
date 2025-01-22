@@ -30,40 +30,53 @@
 	</div>
 
 	<div class="stepwizard">
-	    <div class="stepwizard-row">
-	    	<template x-for="alphabet in alphabets" :key="alphabet">
-		        <div class="stepwizard-step">
-		            <button type="button" class="btn btn-primary btn-circle" x-text="alphabet" @click="filter(alphabet)"></button>
-		        </div> 
-	    	</template>
-	    </div>
+		<div class="stepwizard-row">
+			<template x-for="alphabet in alphabets" :key="alphabet">
+				<div class="stepwizard-step">
+					<button type="button" class="btn btn-primary btn-circle" x-text="alphabet" @click="filter(alphabet)"></button>
+				</div> 
+			</template>
+		</div>
 	</div>
 
+	<div class="category-filter">
+		<label for="category">Filter by Category:</label>
+		<select id="category" x-model="selectedCategory" @change="filterByCategory">
+			<option value="">All</option>
+			<template x-for="category in categories" :key="category">
+				<option x-text="category"></option>
+			</template>
+		</select>
+	</div>
 
 	<section class="row">
 		<template x-for="item in filteredData" :key="item">
 			<div class="col-4 card">
-				<h5 x-text="item['name']"></h5>
-		    	<p x-text="item['description']"></p>
-		    	<h5 x-text="item['dateOpen'] +' - '+ item['dateClose']"></h5>
-		    </div>
+				<div class="card-header">
+					<h5 x-text="item['name']" class="item-name"></h5>
+					<span x-text="item['category']" class="item-category"></span>
+				</div>
+				<p x-text="item['description']"></p>
+				<h5 x-text="item['dateOpen'] +' - '+ item['dateClose']"></h5>
+			</div>
 		</template>
 	</section>
-
-<!-- 	<div x-data="{ count: items.length }" class="footer">
-		<button x-show = "count > 8" class="btn">LOAD MORE</button>
-	</div> -->
 
 <script type="text/javascript">
 	function loadData() {
 		return {
 			alphabets: ['*', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
 			search: "",
+			selectedCategory: "",
+			categories: [...new Set(items.map(item => item.category))],
 			myForData: items,
 			get filteredData() {
 				let data = this.myForData;
 				if (this.search !== "") {
 					data = data.filter(item => item.name.toLowerCase().startsWith(this.search.toLowerCase()));
+				}
+				if (this.selectedCategory !== "") {
+					data = data.filter(item => item.category === this.selectedCategory);
 				}
 				return data.sort(compare);
 			},
@@ -73,6 +86,9 @@
 				} else {
 					this.search = alphabet;
 				}
+			},
+			filterByCategory() {
+				// This function is just a placeholder to trigger the reactivity
 			}
 		};
 	}
@@ -80,7 +96,6 @@
 	function compare(a, b) {
 		return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
 	}
-
 </script>
 </body>
 </html>
